@@ -1,0 +1,60 @@
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --ink: #0e1116;
+  --muted: #5a6472;
+  --line: #e2e5ea;
+  --accent: #e5481a;
+  --accent-soft: #ffe2d4;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0c0f;
+    --surface: #151920;
+    --ink: #e9edf2;
+    --muted: #9aa4b2;
+    --line: #242a33;
+    --accent: #ff6a2b;
+    --accent-soft: #3b1c0e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+a { color: var(--accent); }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+
+header.brand { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+header.brand img { width: 44px; height: 44px; border-radius: 12px; }
+header.brand a { color: var(--ink); text-decoration: none; font-weight: 900; letter-spacing: 0.08em; }
+
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 16px; }
+h1 em { color: var(--accent); font-style: normal; }
+h2 { font-size: 1.35rem; letter-spacing: -0.01em; margin: 40px 0 8px; }
+h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+p.lead { font-size: 1.15rem; color: var(--muted); max-width: 36rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 32px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px; }
+.card strong { display: block; margin-bottom: 4px; }
+.card span { color: var(--muted); font-size: 0.95rem; }
+
+.pill { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: 0.9rem; }
+
+.doc p, .doc li { color: var(--ink); }
+.doc .meta { color: var(--muted); font-size: 0.95rem; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+footer a { margin-right: 16px; }
